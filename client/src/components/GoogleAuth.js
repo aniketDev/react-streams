@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signIn, signOut } from '../actions';
 
 class GoogleAuth extends Component {
   state = {
@@ -21,15 +23,19 @@ class GoogleAuth extends Component {
     });
   }
 
-  onAuthChange() {
-    this.setState({ isSignedIn: this.auth.isSignedIn.get() });
-  }
+  onAuthChange = isSignedIn => {
+    if (isSignedIn) {
+      this.props.signIn();
+    } else {
+      this.props.signOut();
+    }
+  };
 
-  onSignIn = () => {
+  onSignInClick = () => {
     this.auth.signIn();
   };
 
-  onSignOut = () => {
+  onSignOutClick = () => {
     this.auth.signOut();
   };
 
@@ -38,14 +44,14 @@ class GoogleAuth extends Component {
       return null;
     } else if (this.state.isSignedIn) {
       return (
-        <button onClick={this.onSignOut} className="ui button red google">
+        <button onClick={this.onSignOutClick} className="ui button red google">
           <i className="google icon" />
           Sign Out
         </button>
       );
     } else {
       return (
-        <button onClick={this.onSignIn} className="ui button red google">
+        <button onClick={this.onSignInClick} className="ui button red google">
           <i className="google icon" />
           Sign In with Google
         </button>
@@ -58,4 +64,8 @@ class GoogleAuth extends Component {
   }
 }
 
-export default GoogleAuth;
+const maoStateToProps = state => {
+  return { isSignedIn: this.state.isSignedIn };
+};
+
+export default connect(maoStateToProps, { signIn, signOut })(GoogleAuth);
