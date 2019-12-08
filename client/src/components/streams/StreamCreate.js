@@ -2,16 +2,25 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 class StreamCreate extends Component {
-  renderInput(formProps) {
-    return <input onChange={formProps.input.onChange} value={form.input.value} />;
+  renderInput({ input, label }) {
+    return (
+      <div className="filed">
+        <label>{label}</label>
+        <input {...input} />
+      </div>
+    );
+  }
+
+  onSubmit(formValues) {
+    console.log(formValues);
   }
 
   render() {
-    console.log(this.props);
     return (
-      <form>
-        <Field name="title" component={this.renderInput} />
-        <Field name="description" component={this.renderInput} />
+      <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
+        <Field name="title" component={this.renderInput} label="Enter title" />
+        <Field name="description" component={this.renderInput} label="Enter description" />
+        <button className="ui button primary">Submit</button>
       </form>
     );
   }
