@@ -1,6 +1,5 @@
 import { TYPES } from './types';
 import streams from '../apis/streams';
-import { types } from '@babel/core';
 
 export const signIn = userId => {
   return {
@@ -40,7 +39,7 @@ export const editStream = (id, formValues) => async dispatch => {
 };
 
 export const deleteStream = id => async dispatch => {
-  const response = await streams.delete(`/streams/${id}`);
+  await streams.delete(`/streams/${id}`);
 
   dispatch({ type: TYPES.DELETE_STREAM, payload: id });
 };
