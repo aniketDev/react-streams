@@ -9,6 +9,12 @@
       "title": "Other Stream",
       "description": "This is a new  stream",
       "id": 2
+    },
+    {
+      "title": "Streams with userId",
+      "description": "Hey! I'm the stream with user id",
+      "userId": null,
+      "id": 3
     }
   ]
 }
