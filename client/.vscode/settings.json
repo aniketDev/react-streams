@@ -1,5 +1,7 @@
 {
   "prettier.singleQuote": true,
   "workbench.settings.useSplitJSON": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "prettier.trailingComma": "none",
+  "prettier.printWidth": 100
 }

@@ -55,7 +55,8 @@ const validate = formValues => {
 
 const formWrapped = reduxForm({
   form: 'streamCreate',
-  validate: validate
+  validate: validate,
+  destroyOnUnmount: false
 })(StreamCreate);
 
 export default connect(null, { createStream })(formWrapped);
