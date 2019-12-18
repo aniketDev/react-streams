@@ -4,7 +4,7 @@ import _ from 'lodash';
 export default (state = {}, action) => {
   switch (action.type) {
     case TYPES.FETCH_STREAM:
-      return { ...state, [action.payload.id]: action.paylaod };
+      return { ...state, [action.payload.id]: action.payload };
     case TYPES.CREATE_STREAM:
       return { ...state, [action.payload.id]: action.payload };
     case TYPES.EDIT_STREAM:

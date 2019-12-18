@@ -9,12 +9,12 @@ class StreamEdit extends Component {
 
   render() {
     console.log(this.props);
-    return <div>Stream Edit</div>;
+    return <div>{this.props.stream ? this.props.stream.title : 'Loading...'}</div>;
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return { state: state.streams[ownProps.match.params.id] };
+  return { stream: state.streams[ownProps.match.params.id] };
 };
 
 export default connect(mapStateToProps, { fetchStream })(StreamEdit);
