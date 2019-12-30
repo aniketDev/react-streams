@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "title": "Streams with userId",
-      "description": "Hey! I'm the stream with user id",
+      "title": "Test refactor1",
+      "description": "Test refactor desc1",
       "userId": null,
       "id": 3
     },
@@ -30,14 +30,13 @@
     },
     {
       "title": "Test refactor",
-      "description": "Test refactor desc",
+      "description": "Test refactor desc1",
       "userId": null,
       "id": 6
     },
     {
-      "title": "new title",
-      "description": "title desc",
-      "userId": null,
+      "title": "asas",
+      "description": "sasa",
       "id": 7
     }
   ]
