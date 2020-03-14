@@ -13,9 +13,9 @@ class StreamForm extends Component {
   }
 
   renderInput = ({ input, label, meta }) => {
-    const clasName = `field ${meta.error && meta.touched ? 'error' : ''}`;
+    const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
     return (
-      <div className={clasName}>
+      <div className={className}>
         <label>{label}</label>
         <input {...input} autoComplete="off" />
         {this.renderError(meta)}
